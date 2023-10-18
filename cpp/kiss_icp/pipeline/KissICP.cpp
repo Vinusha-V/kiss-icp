@@ -113,4 +113,4 @@ void KissICP::Reset(Sophus::SE3d se3d_transform) {
     local_map_.Clear();
 }
 
-}  // namespace kiss_icp::pipeline
+}  // namespace kiss_icp::pipelinecat

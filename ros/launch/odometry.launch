@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <launch>
   <!-- ROS paramaters -->
-  <arg name="bagfile" default=""/>
+  <arg name="bagfile" default="/home/vinusha/bags/boson_save_path_2023-09-08-11-37-49.bag"/>
   <arg name="visualize" default="true"/>
   <arg name="odom_frame" default="odom"/>
   <arg name="child_frame" default="base_link"/>
-  <arg name="topic" default=""/>
+  <arg name="topic" default="/lslidar_point_cloud"/>
   <arg name="publish_odom_tf" default="true"/>
   <arg name="publish_alias_tf" default="true"/>
 
@@ -35,7 +35,7 @@
 
   <!-- Rosbag player, if bagfile argument was specified -->
   <group if="$(eval bagfile != '')">
-    <node pkg="rosbag" type="play" name="player" args="$(arg bagfile)" output="screen"/>
+    <node pkg="rosbag" type="play" name="player" args="$(arg bagfile) --topics /lslidar_point_cloud" output="screen"/>
   </group>
 
   <!-- Visualizer -->
